@@ -1,124 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="chrome=1" />
-	<meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=yes" />
-	<title>GitHut - Programming Languages and GitHub</title>
-	<meta name="Description" content="A small place to discover more about the usage of programming languages in GitHub.">
-	<meta property="og:title" content="GitHut - Programming Languages and GitHub">
-	<meta property="og:url" content="http://githut.info/">
-	<meta property="og:type" content="website">
-	<meta property="og:description" content="A small place to discover more about the usage of programming languages in GitHub." >
-	<meta property="og:image" content="http://githut.info/open_graph.png">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>GitHut - Programming Languages and GitHub</title>
+    <meta name="Description" content="A small place to discover more about the usage of programming languages in GitHub.">
+    <meta property="og:title" content="GitHut - Programming Languages and GitHub">
+    <meta property="og:url" content="http://githut.info/">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="A small place to discover more about the usage of programming languages in GitHub." >
+    <meta property="og:image" content="http://githut.info/open_graph.png">
 
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:site" content="@littleark">
-	<meta name="twitter:title" content="GitHut - Programming Languages and GitHub">
-	<meta name="twitter:description" content="A small place to discover more about the usage of programming languages in GitHub.">
-	<meta name="twitter:creator" content="@littleark">
-	<meta name="twitter:image:src" content="http://githut.info/open_graph.png">
-	<meta name="twitter:domain" content="http://githut.info/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@littleark">
+    <meta name="twitter:title" content="GitHut - Programming Languages and GitHub">
+    <meta name="twitter:description" content="A small place to discover more about the usage of programming languages in GitHub.">
+    <meta name="twitter:creator" content="@littleark">
+    <meta name="twitter:image:src" content="http://githut.info/open_graph.png">
+    <meta name="twitter:domain" content="http://githut.info/">
 
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="web/css/pc.css">
-	<link rel="stylesheet" href="web/css/sm.css">
-	<link rel="stylesheet" href="web/css/lc.css">
-	<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js" charset="utf-8"></script>
-	<script>window.d3||document.write('<script src="web/js/vendors/d3/d3.min.js"><\/script>');</script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="web/css/pc.css">
+    <link rel="stylesheet" href="web/css/sm.css">
+    <link rel="stylesheet" href="web/css/lc.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js" charset="utf-8"></script>
+    <script>window.d3||document.write('<script src="web/js/vendors/d3/d3.min.js"><\/script>');</script>
 </head>
 <body>
-	<div id="wrapper">
-		<div id="header">
-			<h1>Git<b>Hut</b></h1>
-			<h2>A small place to discover languages in GitHub</h2>
+    <div id="wrapper">
+        <div id="header">
+            <h1>Git<b>Hut</b></h1>
+            <h2>A small place to discover languages in GitHub</h2>
             <h3><a href="http://githut.info/">Original</a> by <a href="http://www.makinguse.com/">Carlo Zapponi</a> • Forked by Max Goldstein</h3>
-			<div class="social social-top">
-				<a href="https://www.github.com/littleark/githut/" target="_blank" title="GitHub Repository"><i class="icon-github"></i></a>
-				<a class="twitter_link" href="http://twitter.com/intent/tweet?text=GitHut+-+A+visualization+of+Programming+Languages+in+Github&url=http%3A%2F%2Fgithut.info&via=littleark&hashtags=dataviz" target="_blank" title="Share on Twitter"><i class="icon-twitter"></i></a>
-				<a href="https://plus.google.com/share?url=http%3A%2F%2Fgithut.info" target="_blank" title="Share on Google+"><i class="icon-gplus" title="Share on Google+"></i></a>
-				<a href="http://facebook.com/sharer.php?u=http%3A%2F%2Fgithut.info" target="_blank" title="Share on Facebook"><i class="icon-facebook" title="Share on Facebook"></i></a>
-			</div>
-		</div>
-		<div id="qc">
-			<div id="timeselect"></div>
-		</div>
-		<div id="pc">
-			<div id="tooltip">
-				<div></div>
-			</div>
-		</div>
-		<div id="sm_header">
-			<h2>Top active languages</h2>
-			<h3>A split by language view of active repositories</h3>
-		</div>
-		<div id="sm">
-			<div id="sm_select">
-				<span rel="num">view by total amount</span>
-				<div id="selector">
-					<a href="#" id="num" class="selected">#</a>
-					<a href="#" id="perc">%</a>	
-				</div>
-				<span class="right" rel="perc">view by percentage on total</span>
-			</div>
-		</div>
-		<div id="contents">
-			<div class="description">
-				<h5>GitHut</h5>
-				<p>
-					GitHut is an attempt to visualize and explore the complexity of the universe of programming languages used
-					across the repositories hosted on GitHub.<br/>
-					<br/>
-					Programming languages are not simply the tool developers use to create programs or express algorithms but also instruments to code and decode creativity.
-					By observing the history of languages we can enjoy the quest of human kind for a better way to solve problems, to facilitate collaboration between people and to reuse the effort of others.<br/>
-					<br/>
-					<a href="#" target="_blank">Github</a> is the largest code host in the world, with 3.4 million users. It's the place where the open-source development community offers access to most of its projects.
-					By analyzing how languages are used in GitHub it is possible to understand the popularity of programming languages among developers and also to discover the unique characteristics of each language.
-					<br>
-					<br/>
-				</p>
-			</div>
-			<div class="description">
-				<h5>Data</h5>
-				<p>
-					GitHub provides publicly available <a href="#" target="_blank">API</a> to interact with its huge dataset of events and interaction with the hosted repositories.<br/>
-					<a href="http://www.githubarchive.org/" target="_blank">GitHub Archive</a> takes this data a step further by aggregating and storing it for public consumption. GitHub Archive dataset is also available via <a href="https://developers.google.com/bigquery/" target="_blank">Google BigQuery</a>.
-					<br/>
-					The quantitative data used in GitHut is collected from <a href="http://www.githubarchive.org/">GitHub Archive</a>. The data is updated on a quarterly basis.<br/>
-					<br/>
-					An additional note about the data is about the large amount of records in which the programming language is not specified. This particular characteristic is extremely evident for the Create Events (of repository), therefore it is not possible to visualize the trending language in terms of newly created repositories. For this reason the <i>Activity</i> value (in terms of number of changes pushed) has been considered the best metric for the popularity of programming languages.
-					<br/><br/>
-					The release year of the programming language is based on the table <a href="http://en.wikipedia.org/wiki/Timeline_of_programming_languages" target="_blank">Timeline of programming languages</a> from Wikipedia.
-					<br/><br/>
-					For more information on the methodology of the data collection check-out the publicly available GitHub <a href="https://www.github.com/littleark/githut/" target="_blank">repository of GitHut</a>.
-				</p>
-			</div>
-		</div>
-		<div id="footer">
-			<a href="http://githut.info">GitHut.info</a><br/>
-			<a href="http://www.makinguse.com">Carlo Zapponi</a> 2014
-			<div class="social">
-				<a href="https://www.github.com/littleark/githut/" target="_blank" title="GitHub Repository"><i class="icon-github"></i></a>
-				<a class="twitter_link" href="http://twitter.com/intent/tweet?text=GitHut+-+A+visualization+of+Programming+Languages+in+Github&url=http%3A%2F%2Fgithut.info&via=littleark&hashtags=dataviz" target="_blank" title="Share on Twitter"><i class="icon-twitter"></i></a>
-				<a href="https://plus.google.com/share?url=http%3A%2F%2Fgithut.info" target="_blank" title="Share on Google+"><i class="icon-gplus" title="Share on Google+"></i></a>
-				<a href="http://facebook.com/sharer.php?u=http%3A%2F%2Fgithut.info" target="_blank" title="Share on Facebook"><i class="icon-facebook" title="Share on Facebook"></i></a>
-			</div>
-			<div id="licence" class="clearfix"><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" class="cc" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><div>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">Creative Commons BY-NC-SA License</a>.</div></div>
-		</div>
-	</div>
-	<script src="web/js/parallelcoordinates.js"></script>
-	<script src="web/js/smallmultiples.js"></script>
-	<script src="web/js/linechart.js"></script>
-	<script src="web/js/main.js"></script>
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            <div class="social social-top">
+                <a href="https://www.github.com/littleark/githut/" target="_blank" title="GitHub Repository"><i class="icon-github"></i></a>
+                <a class="twitter_link" href="http://twitter.com/intent/tweet?text=GitHut+-+A+visualization+of+Programming+Languages+in+Github&url=http%3A%2F%2Fgithut.info&via=littleark&hashtags=dataviz" target="_blank" title="Share on Twitter"><i class="icon-twitter"></i></a>
+                <a href="https://plus.google.com/share?url=http%3A%2F%2Fgithut.info" target="_blank" title="Share on Google+"><i class="icon-gplus" title="Share on Google+"></i></a>
+                <a href="http://facebook.com/sharer.php?u=http%3A%2F%2Fgithut.info" target="_blank" title="Share on Facebook"><i class="icon-facebook" title="Share on Facebook"></i></a>
+            </div>
+        </div>
+        <div id="qc">
+            <div id="timeselect"></div>
+        </div>
+        <div id="pc">
+            <div id="tooltip">
+                <div></div>
+            </div>
+        </div>
+        <div id="sm_header">
+            <h2>Top active languages</h2>
+            <h3>A split by language view of active repositories</h3>
+        </div>
+        <div id="sm">
+            <div id="sm_select">
+                <span rel="num">view by total amount</span>
+                <div id="selector">
+                    <a href="#" id="num" class="selected">#</a>
+                    <a href="#" id="perc">%</a>
+                </div>
+                <span class="right" rel="perc">view by percentage on total</span>
+            </div>
+        </div>
+        <div id="contents">
+            <div class="description">
+                <h5>GitHut</h5>
+                <p>
+                    GitHut is an attempt to visualize and explore the complexity of the universe of programming languages used
+                    across the repositories hosted on GitHub.<br/>
+                    <br/>
+                    Programming languages are not simply the tool developers use to create programs or express algorithms but also instruments to code and decode creativity.
+                    By observing the history of languages we can enjoy the quest of human kind for a better way to solve problems, to facilitate collaboration between people and to reuse the effort of others.<br/>
+                    <br/>
+                    <a href="#" target="_blank">Github</a> is the largest code host in the world, with 3.4 million users. It's the place where the open-source development community offers access to most of its projects.
+                    By analyzing how languages are used in GitHub it is possible to understand the popularity of programming languages among developers and also to discover the unique characteristics of each language.
+                    <br>
+                    <br/>
+                </p>
+            </div>
+            <div class="description">
+                <h5>Data</h5>
+                <p>
+                    GitHub provides publicly available <a href="#" target="_blank">API</a> to interact with its huge dataset of events and interaction with the hosted repositories.<br/>
+                    <a href="http://www.githubarchive.org/" target="_blank">GitHub Archive</a> takes this data a step further by aggregating and storing it for public consumption. GitHub Archive dataset is also available via <a href="https://developers.google.com/bigquery/" target="_blank">Google BigQuery</a>.
+                    <br/>
+                    The quantitative data used in GitHut is collected from <a href="http://www.githubarchive.org/">GitHub Archive</a>. The data is updated on a quarterly basis.<br/>
+                    <br/>
+                    An additional note about the data is about the large amount of records in which the programming language is not specified. This particular characteristic is extremely evident for the Create Events (of repository), therefore it is not possible to visualize the trending language in terms of newly created repositories. For this reason the <i>Activity</i> value (in terms of number of changes pushed) has been considered the best metric for the popularity of programming languages.
+                    <br/><br/>
+                    The release year of the programming language is based on the table <a href="http://en.wikipedia.org/wiki/Timeline_of_programming_languages" target="_blank">Timeline of programming languages</a> from Wikipedia.
+                    <br/><br/>
+                    For more information on the methodology of the data collection check-out the publicly available GitHub <a href="https://www.github.com/littleark/githut/" target="_blank">repository of GitHut</a>.
+                </p>
+            </div>
+        </div>
+        <div id="footer">
+            <a href="http://githut.info">GitHut.info</a><br/>
+            <a href="http://www.makinguse.com">Carlo Zapponi</a> 2014
+            <div class="social">
+                <a href="https://www.github.com/littleark/githut/" target="_blank" title="GitHub Repository"><i class="icon-github"></i></a>
+                <a class="twitter_link" href="http://twitter.com/intent/tweet?text=GitHut+-+A+visualization+of+Programming+Languages+in+Github&url=http%3A%2F%2Fgithut.info&via=littleark&hashtags=dataviz" target="_blank" title="Share on Twitter"><i class="icon-twitter"></i></a>
+                <a href="https://plus.google.com/share?url=http%3A%2F%2Fgithut.info" target="_blank" title="Share on Google+"><i class="icon-gplus" title="Share on Google+"></i></a>
+                <a href="http://facebook.com/sharer.php?u=http%3A%2F%2Fgithut.info" target="_blank" title="Share on Facebook"><i class="icon-facebook" title="Share on Facebook"></i></a>
+            </div>
+            <div id="licence" class="clearfix"><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" class="cc" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><div>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">Creative Commons BY-NC-SA License</a>.</div></div>
+        </div>
+    </div>
+    <script src="web/js/parallelcoordinates.js"></script>
+    <script src="web/js/smallmultiples.js"></script>
+    <script src="web/js/linechart.js"></script>
+    <script src="web/js/main.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	  ga('create', 'UA-364839-37', 'auto');
-	  ga('send', 'pageview');
+      ga('create', 'UA-364839-37', 'auto');
+      ga('send', 'pageview');
 
-	</script>
+    </script>
 </body>
 </html>

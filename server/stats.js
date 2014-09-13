@@ -52,13 +52,13 @@ MongoClient.connect("mongodb://localhost:27017/github", function(err, db) {
                   //"Prov":12
                 }
               },
-              { 
+              {
                 $group:group
               },
               { $sort: {max_date:-1} }
           ],
           {
-            allowDiskUsage: true, 
+            allowDiskUsage: true,
             cursor: {batchSize: 1000}
           }
         );
@@ -68,7 +68,7 @@ MongoClient.connect("mongodb://localhost:27017/github", function(err, db) {
 
         // Use cursor as stream
         cursor.on('data', function(data) {
-          
+
           records.push(data);
           //data.forEach(function(d){
 
@@ -78,7 +78,7 @@ MongoClient.connect("mongodb://localhost:27017/github", function(err, db) {
         });
 
         cursor.on('end', function() {
-          
+
           //console.log(records);
 
           generateCSV(records);
