@@ -243,6 +243,7 @@ a:hover {
     stroke-width:1;
     stroke:#A06535;
     stroke-opacity:0;
+    fill:#ECDFD4;
     fill-opacity:0;
 }
 #pc svg #languages .marker.ordinal line {

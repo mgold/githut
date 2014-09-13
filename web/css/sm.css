@@ -118,7 +118,9 @@
     fill:#A06535;
     stroke:none;
     fill-opacity:0;
-
+}
+#sm .first svg .linechart circle {
+    fill:#006AAD;
 }
 #sm svg .linechart g:hover circle {
     fill-opacity:1;
@@ -169,9 +171,18 @@
 
 #sm svg .linechart path.area {
     stroke:none;
-    fill:#A06535;
+    fill:#ECDFD4;
     fill-opacity:0.5;
 }
+
+#sm .first svg .linechart path.line {
+    stroke:#006AAD;
+}
+
+#sm .first svg .linechart path.area {
+    fill:#AADCFC;
+}
+
 #sm svg .linechart path.default {
     stroke:#006AAD;
     stroke-width:1;

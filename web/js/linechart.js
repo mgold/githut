@@ -30,39 +30,6 @@ function LineChart(data,options) {
                 .attr("width",WIDTH)
                 .attr("height",HEIGHT);
 
-    var defs=svg.append("defs")
-            .append("pattern")
-                .attr({
-                    id:"diagonalHatch",
-                    width:3,
-                    height:3,
-                    patternTransform:"rotate(-45 0 0)",
-                    patternUnits:"userSpaceOnUse"
-                });
-    defs.append("rect")
-                    .attr({
-                        x:0,
-                        y:0,
-                        width:4,
-                        height:4
-                    })
-                    .style({
-                        stroke:"none",
-                        fill:"#fff"
-                    })
-    defs
-        .append("line")
-        .attr({
-            x0:0,
-            y1:0,
-            x2:0,
-            y2:4
-        })
-        .style({
-            stroke:"#A06535",
-            "stroke-width":1
-        })
-
     var axes=svg.append("g")
                 .attr("id","axes")
                 .attr("transform","translate("+margins.left+","+(HEIGHT-margins.bottom)+")");
@@ -98,9 +65,6 @@ function LineChart(data,options) {
             .append("path")
             .attr("class","area")
             .attr("d",area(data))
-            .style({
-                fill:"url(#diagonalHatch)"
-            })
 
     linechart
             .append("path")

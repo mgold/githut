@@ -64,43 +64,7 @@ function ParallelCoordinates(data,options) {
                 .attr("width",WIDTH)
                 .attr("height",HEIGHT);
 
-    var defs=svg.append("defs")
-            .append("pattern")
-                .attr({
-                    id:"diagonalHatch",
-                    width:3,
-                    height:3,
-                    patternTransform:"rotate(-45 0 0)",
-                    patternUnits:"userSpaceOnUse"
-                });
-    defs.append("rect")
-            .attr({
-                x:0,
-                y:0,
-                width:3,
-                height:3
-            })
-            .style({
-                stroke:"none",
-                fill:"#fff"
-            })
-    defs.append("line")
-            .attr({
-                x0:0,
-                y1:0,
-                x2:0,
-                y2:3
-            })
-            .style({
-                stroke:"#A06535",
-                "stroke-opacity":1,
-                "stroke-width":1
-            })
-
-
     var xscale=d3.scale.ordinal().domain(options.columns).rangePoints([0,WIDTH-(margins.left+margins.right+padding.left+padding.right)]);
-
-
 
     var yscales={},
         width_scales={};
@@ -557,9 +521,6 @@ function ParallelCoordinates(data,options) {
                 .attr("y",-4)
                 .attr("width",0)
                 .attr("height",8)
-                .style({
-                    fill:"url(#diagonalHatch)"
-                })
 
         new_markers
                 .filter(function(d){
