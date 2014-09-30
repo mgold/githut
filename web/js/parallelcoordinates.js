@@ -51,7 +51,7 @@ function ParallelCoordinates(data,options) {
     };
 
     var marker_width=[
-        2,
+        1,
         (WIDTH-d3.sum([margins.left,margins.right,padding.left,padding.right]))/options.columns.length
     ];
 
@@ -316,38 +316,23 @@ function ParallelCoordinates(data,options) {
         var ticks=axis
             .selectAll("g.tick")
                 .data(function(d){
-
-
-
-
-                    var ticks=[
-                                0,
-                                width_scales[d].domain()[1]
-                            ].map(function(v,i){
-                        return {
-                            value:i===0?0:v,
-                            x:(i===0?0:width_scales[d](v)/2),
-                            domain:width_scales[d].domain(),
-                            range:width_scales[d].range()
-                        }
+                    return [0,
+                            width_scales[d].domain()[1]/2,
+                            width_scales[d].domain()[1]
+                           ].map(function(v,i){
+                            return { value:v,
+                                     x:width_scales[d](v) - marker_width[1]/2
+                                   }
                     });
-
-                    return ticks.concat(ticks.map(function(t){
-                        return {
-                            scale:d,
-                            value:t.value,
-                            x:-t.x
-                        };
-                    }));
                 })
                 .enter()
                 .append("g")
                     .attr("class","tick")
-                    .classed("start",function(d){
-                        return d.x<0;
+                    .classed("start",function(d,i){
+                        return i===0;
                     })
-                    .classed("end",function(d){
-                        return d.x>0;
+                    .classed("end",function(d,i){
+                        return i==2;
                     })
                     .attr("transform",function(d){
                         return "translate("+d.x+",0)";
@@ -455,6 +440,7 @@ function ParallelCoordinates(data,options) {
 
         languages.append("g")
                 .attr("class","markers")
+                .attr("transform", "translate(-"+marker_width[1]/2+",0)")
 
         languages.append("g")
                 .attr("class","lang-label")
@@ -505,7 +491,6 @@ function ParallelCoordinates(data,options) {
 
                                 var x=xscale(d.column),
                                     y=yscales[d.column].range()[0];
-
                                 return "translate("+x+","+y+")";
                             })
 
@@ -527,7 +512,7 @@ function ParallelCoordinates(data,options) {
                     return options.scale_map[d.column]!="ordinal"
                 })
                 .append("circle")
-                .attr("cx",0)
+                .attr("cx",marker_width[1]/2)
                 .attr("cy",0)
                 .attr("r",2)
 
@@ -537,7 +522,7 @@ function ParallelCoordinates(data,options) {
                 })
                     .append("circle")
                     .attr("class","hover")
-                    .attr("cx",0)
+                    .attr("cx",marker_width[1]/2)
                     .attr("cy",0)
                     .attr("r",5)
 
@@ -564,7 +549,7 @@ function ParallelCoordinates(data,options) {
                 .transition()
                 .duration(options.duration)
                 .attr("x",function(d){
-                    return -width_scales[d.column](d.value/((options.dimensions.indexOf(d.column)>-1)?1:d.ref))/2;
+                    return 0;
                 })
                 .attr("width",function(d){
                     return width_scales[d.column](d.value/((options.dimensions.indexOf(d.column)>-1)?1:d.ref));
