@@ -12,7 +12,7 @@ d3.csv("web/data/languages.csv",function(d){
         programming_languages[lang["name_lc"]]=lang["Year"];
     })
 
-    var last_quarter="q2-2014";
+    var last_quarter="q3-2014";
     var unknonw=[];
 
     d3.csv("server/exports/"+last_quarter+".csv",function(q){
@@ -127,7 +127,7 @@ d3.csv("web/data/languages.csv",function(d){
         });
     });
 
-    d3.csv("server/exports/active_quarters.csv?123",function(d){
+    d3.csv("server/exports/active_quarters.csv?1234",function(d){
 
         d.active_repos_by_url=+d.active_repos_by_url;
         d.date=new Date(d.year,((+d.quarter)*3-3),1)
@@ -138,7 +138,7 @@ d3.csv("web/data/languages.csv",function(d){
         var extents={
             date:[
                 new Date(2012,3,1),
-                new Date(2014,3,1)
+                new Date(2014,6,1)
             ]
         };
 

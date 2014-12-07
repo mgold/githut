@@ -4,7 +4,7 @@ function LineChart(data,options) {
         HEIGHT=70;
 
     var margins={
-        top:12,
+        top:16,
         bottom:15,
         left:15,
         right:15
@@ -179,9 +179,6 @@ function LineChart(data,options) {
       .attr("class", "x axis")
       .attr("transform", "translate("+padding.left+",0)")
       .call(xAxis)
-
-
-
 
     axes.append("g")
       .attr("class", "y axis")
