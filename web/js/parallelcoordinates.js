@@ -487,10 +487,11 @@ function ParallelCoordinates(data,options) {
                             .classed("ordinal",function(d){
                                 return options.scale_map[d.column]=="ordinal"
                             })
-                            .attr("transform",function(d){
-
+                            .attr("transform",function(d,i,j){
                                 var x=xscale(d.column),
-                                    y=yscales[d.column].range()[0];
+                                    // hack to get rid of sorting
+                                    // doesn't work if you change quarters
+                                    y=19.259259259259238 * j;
                                 return "translate("+x+","+y+")";
                             })
 
@@ -511,26 +512,15 @@ function ParallelCoordinates(data,options) {
                 .filter(function(d){
                     return options.scale_map[d.column]!="ordinal"
                 })
-                .append("circle")
-                .attr("cx",marker_width[1]/2)
-                .attr("cy",0)
-                .attr("r",2)
-
-        new_markers
-                .filter(function(d){
-                    return options.scale_map[d.column]!="ordinal"
-                })
-                    .append("circle")
-                    .attr("class","hover")
-                    .attr("cx",marker_width[1]/2)
-                    .attr("cy",0)
-                    .attr("r",5)
-
+                .append("text")
+                .text(function(d){return d.value})
+                .attr("x", marker_width[1]/2)
+                .style("text-anchor", "middle")
 
         marker
             .transition()
             .duration(duration || options.duration)
-            .attr("transform",function(d){
+            .attr("transform",function(d,i,j){
 
                 var x=xscale(d.column),
                     y=yscales[d.column](d.value/d.ref);
@@ -539,6 +529,9 @@ function ParallelCoordinates(data,options) {
                 }
                 if(options.dimensions.indexOf(d.column)>-1) {
                     y=yscales[d.column](d.value)
+                    // hack to get rid of sorting
+                    // doesn't work if you change quarters
+                    y=19.259259259259238 * j;
                 }
 
                 return "translate("+x+","+y+")";
@@ -557,6 +550,7 @@ function ParallelCoordinates(data,options) {
     }
 
     function updateConnections(duration) {
+        return;
         var connection=languages_group
                 .selectAll(".lang")
                 .select("g.connections")
@@ -780,6 +774,7 @@ function ParallelCoordinates(data,options) {
     }
 
     function updateLabels(duration) {
+        return;
         var labels=labels_group
                     .selectAll(".labels")
                         .selectAll("g.label")
